@@ -21,6 +21,6 @@ export class CartService {
   }
   getShippingPrices(){
     // 定義  HttpClient 的 get() method 來檢視配送資料
-    return this.http.get('/assets/shipping.json');
+    return this.http.get('./assets/shipping.json');
   }
 }

@@ -72,7 +72,7 @@ class CartService {
     }
     getShippingPrices() {
         // 定義  HttpClient 的 get() method 來檢視配送資料
-        return this.http.get('/assets/shipping.json');
+        return this.http.get('./assets/shipping.json');
     }
 }
 CartService.ɵfac = function CartService_Factory(t) { return new (t || CartService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"])); };
