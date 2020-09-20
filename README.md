@@ -1,1 +1,1 @@
-[網頁](https://chite.github.io/w9/dist/)
+[網頁](https://chite.github.io/w9/dist/w9/)
