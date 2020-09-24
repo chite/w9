@@ -1,0 +1,42 @@
+@mixin pc-width() {
+  @media screen and (min-width: 576px) {
+    @content;
+  }
+}
+.note {
+
+  padding: 1rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  &__content {
+    height: 90%;
+    overflow: hidden;
+    color: #963030;
+  }
+  &__sign {
+    height: 10%;
+  }
+  &__title {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 8rem;
+    height: 2rem;
+    @include pc-width() {
+      width: 20rem;
+    }
+  }
+  &__decoration {
+    margin: 5vmin 0;
+    @include pc-width() {
+      margin: 3rem 0;
+    }
+  }
+  &__sign {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1.25rem;
+    color: #ffb100;
+  }
+}

@@ -1,8 +1,18 @@
-<a routerLink="/"> 
-    <!-- RouterLink 指令讓路由器控制了一個連結元素-->
-    <h1>My Store</h1>
-</a>
-<a class="button fancy-button" routerLink="/cart">
-    <i>🛒</i>
-    checkout
-</a>
+<header class="head">
+  <div class="head__box--8 head__box--start">
+    <span class="head__icon" (click)="setLight.emit()">
+      <fa-icon [icon]="light ? faSun : faMoon"></fa-icon>
+    </span>
+  </div>
+  <div class="head__box--4 head__box--end">
+    <span class="head__icon" (click)="setFilter.emit()"
+      ><fa-icon [icon]="faStar"></fa-icon
+    ></span>
+    <span class="head__icon disabled"
+      ><fa-icon [icon]="faShareAlt"></fa-icon
+    ></span>
+    <span class="head__icon" (click)="setTrash.emit()"
+      ><fa-icon [icon]="faTrash"></fa-icon
+    ></span>
+  </div>
+</header>

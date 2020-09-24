@@ -1,0 +1,27 @@
+<article [ngClass]="{ 'main': true, 'main--light': light, 'main--dark': !light }">
+  <header class="head">
+    <div class="head__box--8 head__box--start">
+      <span class="head__icon head__icon--active" routerLink="/">
+        <fa-icon [icon]="faLessThan"></fa-icon>
+      </span>
+    </div>
+    <div class="head__box--4 head__box--end">
+      <span class="head__icon"><fa-icon [icon]="faReply"></fa-icon></span>
+      <span class="head__icon"><fa-icon [icon]="faImage"></fa-icon></span>
+      <span class="head__icon"><fa-icon [icon]="faFont"></fa-icon></span>
+      <span class="head__icon"><fa-icon [icon]="faEllipsisH"></fa-icon></span>
+    </div>
+  </header>
+  <div class="content">
+    <input
+      class="content__title"
+      [value]="userData.title"
+      (keyup)="writingNode($event, 'title')"
+    />
+    <textarea
+      class="content__detail"
+      (keyup)="writingNode($event, 'content')"
+      >{{ userData.content }}</textarea
+    >
+  </div>
+</article>

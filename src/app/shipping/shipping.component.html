@@ -1,6 +1,0 @@
-<h3>Shipping Prices</h3>
-<div class="shipping-item" *ngFor="let shipping of shippingCosts | async">
-    <!-- async pipe: 包裝進 asynchronous test zone，會等到該區域中的所有非同步呼叫都完成 -->
-    <span>{{shipping.type}}</span>
-    <span>{{shipping.price | currency}}</span>
-</div>

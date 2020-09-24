@@ -1,0 +1,12 @@
+<div class="note">
+  <div class="note__content">
+    <h2 class="note__title">{{data.title}}</h2>
+    <hr class="note__decoration" />
+    <hr class="note__decoration" />
+    <hr class="note__decoration" />
+    <hr class="note__decoration" />
+  </div>
+  <span class="note__sign" (click)="clickStar($event,id)">
+    <fa-icon [icon]="data.star ? faStar : borderStar"></fa-icon>
+  </span>
+</div>

@@ -1,5 +1,36 @@
-<app-top-bar></app-top-bar>
-<div class="container">
-  <router-outlet ></router-outlet>
-  <!-- Angular 會根據當前的路由器狀態動態填充它 -->
-</div>
+<article
+  [ngClass]="{
+    main: true,
+    'main--light': notes.light,
+    'main--dark': !notes.light
+  }"
+>
+  <app-top-bar
+    (setLight)="toggleBg()"
+    (setTrash)="deleteNote()"
+    (setFilter)="filterStar()"
+    [light]="notes.light"
+  ></app-top-bar>
+  <ul class="note">
+    <li class="note__item note__add" (click)="addNote()">
+      <div class="text-center">
+        <fa-icon [icon]="faPlus"></fa-icon>
+        <p>新增筆記</p>
+      </div>
+    </li>
+    <li
+      [ngClass]="{ note__item: true, 'note__item--clicked': i == chosen }"
+      (click)="clickNote(i)"
+      *ngFor="let item of noteData; let i = index"
+    >
+      <span class="note__mark" *ngIf="i == chosen">
+        <fa-icon [icon]="faBookmark"></fa-icon>
+      </span>
+      <app-note-item
+        [data]="noteData[i]"
+        [id]="i"
+        (handleClick)="clickStar($event)"
+      ></app-note-item>
+    </li>
+  </ul>
+</article>

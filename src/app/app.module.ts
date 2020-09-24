@@ -1,43 +1,36 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http'; // 使用  Angular 的 HTTP client
 import { ReactiveFormsModule } from '@angular/forms';
 
 import {RouterModule} from '@angular/router'
 import { AppComponent } from './app.component';
 import {TopBarComponent} from './top-bar/top-bar.component';
-import {ProductListComponent} from './product-list/product-list.component';
-import { ProductAlertsComponent } from './product-alerts/product-alerts.component';
-import { ProductDetailsComponent } from './product-details/product-details.component';
-import { CartComponent } from './cart/cart.component';
-import { ShippingComponent } from './shipping/shipping.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NoteItemComponent } from './note-item/note-item.component';
+import { ContentComponent } from './content/content.component';
+import { RoutePageComponent } from './route-page/route-page.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     TopBarComponent,
-    ProductListComponent,
-    ProductAlertsComponent,
-    ProductDetailsComponent,
-    CartComponent,
-    ShippingComponent,
+    NoteItemComponent,
+    ContentComponent,
+    RoutePageComponent,
   ],
   imports: [
     BrowserModule,
-    // 提供 form builder
-    ReactiveFormsModule,
-    // 全域性註冊 Angular 的 HttpClient
-    HttpClientModule,
-    // 新增一個商品詳情路由
+    // 新增一個路由
     RouterModule.forRoot([
-      { path: '', component: ProductListComponent},
-      { path: 'products/:productId',component: ProductDetailsComponent},
-      { path: 'cart', component: CartComponent },
-      { path: 'shipping', component: ShippingComponent }
-    ])
+      {path: '', component: AppComponent},
+      {path: 'note/:id', component: ContentComponent}
+    ]),
+    FontAwesomeModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [RoutePageComponent]
 })
 export class AppModule { }

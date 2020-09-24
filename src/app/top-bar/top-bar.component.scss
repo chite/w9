@@ -1,0 +1,45 @@
+
+
+.head{
+    display: flex;
+    height: 3rem;
+    &__icon{
+        border: 1.5px solid #FFF;
+        color: #FFF;
+        border-radius: 50%;
+        padding: .5rem;
+        box-sizing: border-box;
+        width: 2.75rem;
+        height: 2.75rem;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 .5rem;
+        font-size: 1.5rem;
+        &:not(.disabled):hover{
+            cursor: pointer;
+            filter: brightness(.8);
+        }
+    }
+    .disabled{
+        opacity: .6;
+    }
+}
+.head__box{
+    &--4{
+        width: 33.33%;
+    }
+    &--8{
+        width: 66.66%;
+    }
+    &--start{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    &--end{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+}
